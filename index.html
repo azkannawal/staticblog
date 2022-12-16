@@ -196,7 +196,7 @@
                     </div>
                     <div class="w-full">
                         <button type="submit"
-                            class="kirim text-base font-bold bg-neutral-200 rounded-full py-3 px-8 w-full hover:opacity-80  hover:shadow-lg hover:scale-x-105 ease-in transition duration-200 mb-3  ">Kirim</button>
+                            class="kirim text-base font-bold bg-neutral-200 rounded-full py-3 px-8 w-full hover:opacity-80  hover:shadow-lg hover:scale-x-105 ease-in transition duration-200 mb-3 text-sec">Kirim</button>
                         <button type="button"
                             class="loading font-bold bg-neutral-200 rounded-full py-3 px-8 w-full hover:opacity-80  hover:shadow-lg hover:scale-x-105 ease-in transition duration-200 invisible ">
                             <div class="flex justify-center items-center">
@@ -206,12 +206,12 @@
                             </div>
                         </button>
                     </div>
-                    <div class="alert bg-amber-300 rounded-full px-8 py-3 text-base text-sec flex items-center w-full alert-dismissible fade show mx-auto invisible"
+                    <div class="alert bg-amber-200 rounded-full px-8 py-1 text-base font-medium text-sec flex items-center w-full alert-dismissible fade show mx-auto invisible"
                         role="alert">
-                        Terimakasih telah berkunjung dan berkomentar
+                        Terimakasih sudah berkomentar dan membuang waktu ke tempat ini
                         <button type="button"
-                            class="btn-close box-content w-4 h-4 p-1 ml-auto text-yellow-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline"
-                            data-bs-dismiss="alert" aria-label="Close"></button>
+                            class="silang text-4xl ml-auto text-yellow-900 opacity-50 mb-2">×
+                        </button>
                     </div>
             </form>
         </div>
@@ -268,6 +268,7 @@
         const kirim = document.querySelector('.kirim');
         const loading = document.querySelector('.loading');
         const alert = document.querySelector('.alert');
+        const silang = document.querySelector('.silang');
 
         kirim.addEventListener('click', function () {
             loading.classList.toggle('invisible');
@@ -275,6 +276,10 @@
 
         kirim.addEventListener('click', function () {
             kirim.classList.toggle('hidden');
+        });
+        
+        silang.addEventListener('click', function () {
+            alert.classList.toggle('hidden');
         });
 
         form.addEventListener('submit', e => {
@@ -295,4 +300,3 @@
 </html>
 
 <!-- npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch -->
-<!-- hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#30cfd0] to-[#330867] ease-in-out transition-all duration-300 hover:scale-100 -->
