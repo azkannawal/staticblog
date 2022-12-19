@@ -111,71 +111,44 @@
             <div class="flex flex-wrap">
                 <div class=" w-full lg:w-3/5">
                     <h1 class="text-3xl text-prim block font-bold mb-2 lg:invisible">#Portofolio</h1>
-                    <div id="carouselExampleIndicators" class="carousel slide relative" data-bs-ride="carousel">
-                        <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-                          <button
-                            type="button"
-                            data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide-to="0"
-                            class="active"
-                            aria-current="true"
-                            aria-label="Slide 1"
-                          ></button>
-                          <button
-                            type="button"
-                            data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide-to="1"
-                            aria-label="Slide 2"
-                          ></button>
-                          <button
-                            type="button"
-                            data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide-to="2"
-                            aria-label="Slide 3"
-                          ></button>
-                        </div>
-                        <div class="carousel-inner relative w-full overflow-hidden">
-                          <div class="carousel-item active float-left w-full">
-                            <img
-                              src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"
-                              class="block w-full"
-                              alt="Wild Landscape"
-                            />
-                          </div>
-                          <div class="carousel-item float-left w-full">
-                            <img
-                              src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
-                              class="block w-full"
-                              alt="Camera"
-                            />
-                          </div>
-                          <div class="carousel-item float-left w-full">
-                            <img
-                              src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
-                              class="block w-full"
-                              alt="Exotic Fruits"
-                            />
-                          </div>
-                        </div>
-                        <button
-                          class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
-                          type="button"
-                          data-bs-target="#carouselExampleIndicators"
-                          data-bs-slide="prev"
-                        >
-                          <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button
-                          class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-                          type="button"
-                          data-bs-target="#carouselExampleIndicators"
-                          data-bs-slide="next"
-                        >
-                          <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
+                    <div class="ha">
+                        <div class="img-slider">
+                            <div class="slide active">
+                            <img src="dist/img/1.JPG" alt="">
+                            <div class="info">
+                               <!-- <h2>Slide 01</h2>
+                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+                            </div>
+                            </div>
+                            <div class="slide">
+                            <img src="dist/img/2.JPG" alt="">
+                            <div class="info">
+                               <h2>Slide 02</h2>
+                               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+                            </div>
+                            </div>
+                            <div class="slide">
+                            <img src="dist/img/3.JPG" alt="">
+                            <div class="info">
+                               <!-- <h2>Slide 03</h2>
+                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+                            </div>
+                            </div>
+                            <div class="slide">
+                            <img src="dist/img/4.JPG" alt="">
+                            <div class="info">
+                               <!-- <h2>Slide 04</h2>
+                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+                            </div>
+                            </div>
+                            <div class="navigation">
+                            <div class="btn active"></div>
+                            <div class="btn"></div>
+                            <div class="btn"></div>
+                            <div class="btn"></div>
+                            </div>
+                         </div>
+                    </div>
                 </div>
                 <div class="w-full my-auto lg:pl-5 lg:w-2/5">
                     <div>
@@ -314,8 +287,60 @@
                 .catch(error => console.error('Error!', error.message))
         })
     </script>
+    <script type="text/javascript">
+        var slides = document.querySelectorAll('.slide');
+        var btns = document.querySelectorAll('.btn');
+        let currentSlide = 1;
+    
+        // Javascript for image slider manual navigation
+        var manualNav = function(manual){
+          slides.forEach((slide) => {
+            slide.classList.remove('active');
+    
+            btns.forEach((btn) => {
+              btn.classList.remove('active');
+            });
+          });
+    
+          slides[manual].classList.add('active');
+          btns[manual].classList.add('active');
+        }
+    
+        btns.forEach((btn, i) => {
+          btn.addEventListener("click", () => {
+            manualNav(i);
+            currentSlide = i;
+          });
+        });
+    
+        // Javascript for image slider autoplay navigation
+        var repeat = function(activeClass){
+          let active = document.getElementsByClassName('active');
+          let i = 1;
+    
+          var repeater = () => {
+            setTimeout(function(){
+              [...active].forEach((activeSlide) => {
+                activeSlide.classList.remove('active');
+              });
+    
+            slides[i].classList.add('active');
+            btns[i].classList.add('active');
+            i++;
+    
+            if(slides.length == i){
+              i = 0;
+            }
+            if(i >= slides.length){
+              return;
+            }
+            repeater();
+          }, 7000);
+          }
+          repeater();
+        }
+        repeat();
+        </script>
 </body>
-
 </html>
-
 <!-- npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch -->
