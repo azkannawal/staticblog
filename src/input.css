@@ -64,7 +64,8 @@ html {
  .img-slider .slide img{
    z-index: 1;
    width: 100%;
-   border-radius: 5px;
+   border-radius: 10px;
+   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
  }
  
  .img-slider .slide .info{
@@ -99,20 +100,20 @@ html {
  }
  
  .img-slider .navigation .btn{
-   background: #2B2B2B;
+   background: #f9fafb;
    width: 12px;
    height: 12px;
    margin: 10px;
-   border-radius: 50%;
+   border-radius: 30%;
    cursor: pointer;
  }
  
  .img-slider .navigation .btn.active{
-   background: #f9fafb;
-   box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+   background: #2B2B2B;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
  }
  
- @media (max-width: 820px){
+ @media (max-width: 2000px){
    .img-slider{
      width: 600px;
      height: 375px;
