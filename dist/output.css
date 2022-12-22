@@ -1387,8 +1387,8 @@ video {
   margin-right: 0.75rem;
 }
 
-.mt-48 {
-  margin-top: 12rem;
+.mt-44 {
+  margin-top: 11rem;
 }
 
 .mb-10 {
@@ -1401,6 +1401,18 @@ video {
 
 .mt-auto {
   margin-top: auto;
+}
+
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .block {
@@ -1616,6 +1628,11 @@ video {
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .pt-28 {
@@ -1943,7 +1960,7 @@ html {
   }
 
   .img-slider .navigation{
-    bottom: 25px;
+    bottom: 40px;
   }
 
   .img-slider .navigation .btn{
@@ -2106,6 +2123,10 @@ html {
     margin-left: 2rem;
   }
 
+  .lg\:mt-0 {
+    margin-top: 0px;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -2152,10 +2173,6 @@ html {
 
   .lg\:bg-transparent {
     background-color: transparent;
-  }
-
-  .lg\:bg-sea2 {
-    background-image: url(/dist/img/rect14695.svg);
   }
 
   .lg\:px-32 {
