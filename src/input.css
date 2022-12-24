@@ -65,7 +65,7 @@ html {
    z-index: 1;
    width: 100%;
    border-radius: 5px;
-   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+   box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.5);
  }
  
  .img-slider .slide .info{
@@ -175,4 +175,4 @@ html {
      height: 225px;
    }
  }
- /*360-380, */
+ /*360-380*/

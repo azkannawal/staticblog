@@ -1651,6 +1651,18 @@ video {
   padding-top: 2rem;
 }
 
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1872,7 +1884,7 @@ html {
   z-index: 1;
   width: 100%;
   border-radius: 5px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.5);
 }
 
 .img-slider .slide .info{
@@ -1975,7 +1987,7 @@ html {
   }
 }
 
-/*360-380, */
+/*360-380*/
 
 .hover\:scale-x-105:hover {
   --tw-scale-x: 1.05;
