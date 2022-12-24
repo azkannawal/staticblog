@@ -38,7 +38,3 @@ html {
     -ms-user-select: none;
     user-select: none;
 }
-
-html:focus {
-   outline: none !important;
-}
