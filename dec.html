@@ -59,6 +59,46 @@
         </div>
     </div>
      
+    <section id="komentar" class="pt-36 lg:pt-48 pb-16">
+        <div class="container mx-auto px-7 lg:px-32">
+            <div class="w-full ">
+                <div class="mx-auto mb-8 lg:w-2/3">
+                    <h2 class="font-bold text-prim  text-3xl lg:text-4xl">Komentar</h2>
+                </div>
+            </div>
+            <form name="komentar">
+                <div class="w-full lg:w-2/3 mx-auto">
+                    <div class="w-full mb-8">
+                        <input type="text" id="name" placeholder="Nama/Anonim" name="nama"
+                            class="w-full bg-neutral-200 bg-opacity-80 rounded-md text-prim p-3 focus:outline-none focus:ring-prim focus:ring-1 focus:border-prim" />
+                    </div>
+                    <div class="w-full mb-8">
+                        <textarea type="text" id="pesan" placeholder="Komentar" name="komentar"
+                            class="w-full bg-neutral-200 bg-opacity-80 rounded-md text-prim p-3 focus:outline-none focus:ring-prim focus:ring-1 focus:border-prim h-28"></textarea>
+                    </div>
+                    <div class="w-full">
+                        <button type="submit"
+                            class="kirim text-base font-bold bg-neutral-200 bg-opacity-80 rounded-full py-3 px-8 w-full hover:opacity-80  hover:shadow-lg hover:scale-x-105 ease-in transition duration-200 mb-3 text-sec">Kirim</button>
+                        <button type="button"
+                            class="loading font-bold bg-neutral-200 bg-opacity-80 rounded-full py-3 px-8 w-full hover:opacity-80  hover:shadow-lg hover:scale-x-105 ease-in transition duration-200 invisible ">
+                            <div class="flex justify-center items-center">
+                                <div class="spinner-border animate-spin inline-block w-6 h-6 border-4 rounded-full"
+                                    role="status">
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="alert bg-neutral-200 bg-opacity-80 rounded-full px-8 py-3 lg:py-1 font-medium text-sec flex items-center w-full alert-dismissible fade show mx-auto invisible"
+                        role="alert">
+                        Terimakasih sudah berkomentar dan menghabiskan waktu disini 
+                        <button type="button" class="silang text-4xl ml-auto text-sec mb-2">×
+                        </button>
+                    </div>
+            </form>
+        </div>
+        </div>
+    </section>
+
     <footer class="bg-[#000000] pt-10 pb-10 opacity-90 mt-auto">
         <div class="container mx-auto ">
             <div class="flex justify-center">
@@ -100,6 +140,40 @@
             <h4 class="text-xs pt-3 text-center text-zinc-50">©2022 Azkan Nawal</h4>
         </div>
     </footer>
+
     <script src="dist/js/script.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwMisJ72YmKCMw9SVdnWsB5s9rXC5U_6m6dD9p7ke1gF2kaosSXJ7Ax88c9xJHoA6JIAg/exec'
+        const form = document.forms['komentar'];
+        const kirim = document.querySelector('.kirim');
+        const loading = document.querySelector('.loading');
+        const alert = document.querySelector('.alert');
+        const silang = document.querySelector('.silang');
+
+        kirim.addEventListener('click', function () {
+            loading.classList.toggle('invisible');
+        });
+
+        kirim.addEventListener('click', function () {
+            kirim.classList.toggle('hidden');
+        });
+
+        silang.addEventListener('click', function () {
+            alert.classList.toggle('invisible');
+        });
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    kirim.classList.toggle('hidden');
+                    loading.classList.toggle('invisible');
+                    alert.classList.remove('invisible');
+                    form.reset();
+                    console.log('Success!', response)
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 </body>
 </html>
