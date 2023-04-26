@@ -78,7 +78,8 @@
                     dengan versi album
                     studionya. Semua lagu di album live ini tidak ada yang saya loncati ketika diputar dari track
                     pertama. Namun, "Nutshell", "Brother", "No Excuses", "Down in A Hole",
-                    "Angry Chair" dan "Rooster" yang paling tertanam di kepala saya. Pemutaran album ini akan lebih berkesan
+                    "Angry Chair" dan "Rooster" yang paling tertanam di kepala saya. Pemutaran album ini akan lebih
+                    berkesan
                     jika
                     sekaligus melihat videonya di youtube dibandingkan hanya mendengarkannya di spotify, trust me. <a
                         href="https://youtube.com/playlist?list=PLclODpQJhNz7vm19Ab3k31tUX7dncoup4"
@@ -109,13 +110,28 @@
                 height="152" frameBorder="0" allowfullscreen=""
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"></iframe>
-                <div class="box2 text-center">
-                    <p class="text-sm text-wht bg-prim bg-opacity-90 rounded-lg mt-2 mb-2 pt-1 pb-1">Tentang</p>
-                </div>
-                <div class="nobox2 hidden">
-                    <p class="text-sm text-center text-wht bg-prim bg-opacity-90 rounded-lg mt-2 mb-2 pt-1 pb-1">Tutup</p>
-                    <p class="leading-relaxed text-[#f4f4f4] pb-4 text-sm">Singkat saja, berhubung sekarang Ramadan. Tidak lengkap rasanya jika playlist lagu tidak diisi dengan musik religi. Lagu-lagu grup qasidah legend asal Semarang ini hampir dipastikan pernah lewat di telinga tiap orang. Jika hanya tahu lagunya dan tak tahu siapa artisnya, silahkan berkenalan dengan Nasida Ria. Nostalgia bener dah. (24/03/2023)</p>
-                </div>
+            <div class="box2 text-center">
+                <p class="text-sm text-wht bg-prim bg-opacity-90 rounded-lg mt-2 mb-2 pt-1 pb-1">Tentang</p>
+            </div>
+            <div class="nobox2 hidden">
+                <p class="text-sm text-center text-wht bg-prim bg-opacity-90 rounded-lg mt-2 mb-2 pt-1 pb-1">Tutup</p>
+                <p class="leading-relaxed text-[#f4f4f4] pb-4 text-sm">Singkat saja, berhubung sekarang Ramadan. Tidak
+                    lengkap rasanya jika playlist lagu tidak diisi dengan musik religi. Lagu-lagu grup qasidah legend
+                    asal Semarang ini hampir dipastikan pernah lewat di telinga tiap orang. Jika hanya tahu lagunya dan
+                    tak tahu siapa artisnya, silahkan berkenalan dengan Nasida Ria. Nostalgia bener dah. (24/03/2023)
+                </p>
+            </div>
+            <iframe style="border-radius:12px" 
+                src="https://open.spotify.com/embed/artist/70cRZdQywnSFp9pnc2WTCE?utm_source=generator&theme=0"
+                width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="box3 text-center">
+                <p class="text-sm text-wht bg-prim bg-opacity-90 rounded-lg mt-2 mb-2 pt-1 pb-1">Tentang</p>
+            </div>
+            <div class="nobox3 hidden">
+                <p class="text-sm text-center text-wht bg-prim bg-opacity-90 rounded-lg mt-2 mb-2 pt-1 pb-1">Tutup</p>
+                <p class="leading-relaxed text-[#f4f4f4] pb-4 text-sm">Kolom komentar sebuah kanal youtube mengantarkan saya untuk mengenal duo ini, Paul Simon & Art Garfunkel. Salah satu lagu populer mereka “The Sound of Silence”, ternyata masuk ke dalam daftar lagu yang dulu sekilas pernah saya dengar tapi tidak saya ketahui penyanyinya. Entah kapan dan dimana pernah mendengarnya, tapi rasanya telinga saya kenal dengan melodi lagu itu. Pun, nama Garfunkel sepertinya juga pernah saya baca meski sekali lagi entah dimana. Terlepas dari itu semua, bagi saya Simon & Garfunkel memiliki daya tarik yang kuat berkat suara keduanya yang sangat harmonis serta keunikan vokal yang dimiliki Art Garfunkel. Selain itu, lirik lagu mereka pun juga begitu bagus, khususnya pada lagu “Bridge Over Troubled Water” dan tentu saja “The Sound of Silence” itu sendiri.
+                </p>
+            </div>
         </div>
     </div>
     <footer class="bg-[#0c0c0c] pt-10 pb-10 opacity-90 mt-auto">
@@ -200,6 +216,20 @@
         nobox2.addEventListener('click', function () {
             box2.classList.toggle('hidden');
             nobox2.classList.toggle('hidden');
+        })
+    </script>
+    <script>
+        const box3 = document.querySelector('.box3');
+        const nobox3 = document.querySelector('.nobox3');
+
+        box3.addEventListener('click', function () {
+            box3.classList.toggle('hidden');
+            nobox3.classList.toggle('hidden');
+        })
+
+        nobox3.addEventListener('click', function () {
+            box3.classList.toggle('hidden');
+            nobox3.classList.toggle('hidden');
         })
     </script>
 </body>
